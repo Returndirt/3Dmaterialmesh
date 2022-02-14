@@ -1,0 +1,7 @@
+﻿  3dMaterialMesh.cpp
+C:\Users\11447\source\repos\3dMaterialMesh\3dMaterialMesh\rdcv.h(107,13): warning C4101: “colour4”: 未引用的局部变量
+C:\Users\11447\source\repos\3dMaterialMesh\3dMaterialMesh\tdmm.h(13,23): warning C4018: “<=”: 有符号/无符号不匹配
+C:\Users\11447\source\repos\3dMaterialMesh\3dMaterialMesh\tdmm.h(304,27): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\11447\source\repos\3dMaterialMesh\3dMaterialMesh\tdmm.h(308,22): warning C4834: 放弃具有 "nodiscard" 属性的函数的返回值
+C:\Users\11447\source\repos\3dMaterialMesh\3dMaterialMesh\tdmm.h(320,31): warning C4244: “参数”: 从“std::streamoff”转换到“const unsigned int”，可能丢失数据
+  3dMaterialMesh.vcxproj -> C:\Users\11447\source\repos\3dMaterialMesh\Debug\3dMaterialMesh.exe
