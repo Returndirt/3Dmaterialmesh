@@ -305,7 +305,7 @@ public:
         {
             if (target.substr(target.length() - i - 1) == "/" || target.substr(target.length() - i - 1) == "\\")
             {
-                path == target.substr(0, target.length() - i);
+                path = target.substr(0, target.length() - i);
                 break;
             }
         }
@@ -329,6 +329,17 @@ public:
         std::ofstream fileOut(target);
         fileOut << toString();
         fileOut.close();
+        std::string path = "./";
+        for (int i = 0; i < target.length(); i++)
+        {
+            if (target.substr(target.length() - i - 1) == "/" || target.substr(target.length() - i - 1) == "\\")
+            {
+                path = target.substr(0, target.length() - i);
+                break;
+            }
+        }
+        rdBMWriteImage((char*)(path + material.imgFile).c_str(), material.img);
+        return;
     }
 
 };
