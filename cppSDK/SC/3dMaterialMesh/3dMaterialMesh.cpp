@@ -20,11 +20,18 @@ int main()
     a.material.imgFile = "taseter.bmp";
     */
     //std::string a = "4,4\n0.000000, 0.000000, 0.000000\n1.000000, 0.000000, 0.000000\n1.000000, 0.000000, 1.000000\n1.000000, 1.000000, 1.000000\n0, 1, 2\n0, 1, 3\n0, 2, 3\n1, 2, 3\ntaseter.bmp, 1, 1.000000, 1.000000, 1.000000";
-    TdmMesh b;
-    b.fromFile("./p1.tdm");
+    //TdmMesh b;
+    //b.fromFile("./p1.tdm");
     //std::cout << b.mesh.nodeLine;
     //b.fromString(a);
-    b.toFile("./po.tdm");
+    //b.toFile("./po.tdm");
+    Image a = Image();
+    a.sizeX = 13;
+    a.sizeY = 13;
+    a.colourMap[2][1] = Colour(255, 0, 0);
+    rdBMWriteImage( (char *)"./test.bmp", a);
+
+    
     //std::cout << b.material.img.colourMap[2][2].B;
     //rdBMReadImage((char*)"./taseter.bmp");
 }
