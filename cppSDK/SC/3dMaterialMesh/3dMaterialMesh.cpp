@@ -25,12 +25,21 @@ int main()
     //std::cout << b.mesh.nodeLine;
     //b.fromString(a);
     //b.toFile("./po.tdm");
-    Image a = Image();
-    a.sizeX = 13;
-    a.sizeY = 13;
-    a.colourMap[2][1] = Colour(255, 0, 0);
-    rdBMWriteImage( (char *)"./test.bmp", a);
+    //TdmMesh a = TdmMesh();
+    //a.fromFile("./po.tdm");
+    //a.material.imgFile = "ea.bmp";
+    //_log(2, a.toString());
+    //a.toFile((std::string) "./po2.tdm");
+    TdmMesh a = TdmMesh();
+    a.fromFile("xl.tdm");
+    
+    std::cout << "size:" << a.material.img.sizeX << " " << a.material.img.sizeY << std::endl;
+    std::cout << "extend type:" << a.material.extendType << std::endl;
+    std::cout << "duration:" << a.material.deviation.toString() << std::endl;
+    Colour ls = a.material.getColorAtPosition(makeVector(0.6, 0.4, 1.0));
+    std::cout << "colour Get " << ls.R << " " << ls.G << " " << ls.B << std::endl;
 
+    return 0;
     
     //std::cout << b.material.img.colourMap[2][2].B;
     //rdBMReadImage((char*)"./taseter.bmp");

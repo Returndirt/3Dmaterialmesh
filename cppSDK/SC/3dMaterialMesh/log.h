@@ -2,7 +2,7 @@
 #define LOG_H
 #include <string>
 #include <iostream>
-const int wall = 1;
+const int wall = 4;
 	//0 error 1 warning 2 event 3 something
 void _log(int level, std::string a)
 {

@@ -2,6 +2,7 @@
 #define RDCV_H
 
 #include <cstdio>
+#include <string>
 #include "log.h"
 
 class Colour 
@@ -32,17 +33,17 @@ public:
 	Colour** colourMap;
 	Image()
 	{
-		colourMap = (Colour**)malloc(sizeof(Colour*) * 2048);
+		colourMap = (Colour**)malloc(sizeof(Colour*) * 4096);
 		if(colourMap != NULL)
-		for (int i = 0; i < 2048; i++)
+		for (int i = 0; i < 4096; i++)
 		{
-			colourMap[i] = (Colour*) malloc(sizeof(Colour) * 2048);
+			colourMap[i] = (Colour*) malloc(sizeof(Colour) * 4096);
 		}
 		if (colourMap != NULL)
-		for (int i = 0; i < 2048; i++)
+		for (int i = 0; i < 4096; i++)
 		{
 			if(colourMap[i]!=NULL)
-			for (int j = 0; j < 2048; j++)
+			for (int j = 0; j < 4096; j++)
 			{
 				colourMap[i][j] = Colour(0, 0, 0);
 			}
@@ -108,11 +109,12 @@ Image rdBMReadImage(char* path)
 	Image out = Image();
 
 	//bmpImage = (rdBMimage*)malloc(sizeof(sizeof(rdBMimage)));
-	fopen_s(&fileP,path, "r");
+	//fileP = fopen(path, "rb");
+	fopen_s(&fileP, path, "rb");
 	if (!fileP)
 	{
 		//free(bmpImage);
-		_log(0, "open failed");
+		_log(0, "try to open "+(std::string)path+" open failed");
 		return out;
 	}
 	fread(&fileType, sizeof(unsigned short int),1,fileP);
@@ -140,10 +142,13 @@ Image rdBMReadImage(char* path)
 				int p[3];
 				for (int k = 0; k < 3; k++)
 				{
+					//std::cout << fileP << std::endl;
 					fread(&pixVal, sizeof(unsigned char), 1, fileP);
 					p[2 - k] = (int)pixVal;
 				}
 				out.colourMap[i][j] = Colour(p[0], p[1], p[2]);
+
+				//if (!feof(fileP)&&(i==100 && j==100) )
 				//printf("%d,%d,%d\n", out.colourMap[i][j].R, out.colourMap[i][j].G, out.colourMap[i][j].B);
 				//printf("\n");
 			}
@@ -156,6 +161,7 @@ Image rdBMReadImage(char* path)
 			}
 		}
 	}
+	fclose(fileP);
 	return out;
 }
 
@@ -170,10 +176,10 @@ void rdBMWriteImage(char* path, Image a)
 	unsigned char pixVal = '\0';
 	rdBMcolour* colour4;
 
-	fopen_s(&fileP, path, "w");
+	fopen_s(&fileP, path, "wb");
 	if (!fileP)
 	{
-		_log(0, "openFiled");
+		_log(0, "try to Open "+ (std::string)path+" openFiled");
 		return;
 	}
 
