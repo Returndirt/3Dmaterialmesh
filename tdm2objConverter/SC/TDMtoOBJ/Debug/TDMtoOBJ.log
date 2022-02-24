@@ -1,0 +1,8 @@
+﻿  TDMtoOBJ.cpp
+C:\Users\11447\source\repos\TDMtoOBJ\TDMtoOBJ\rdcv.h(177,14): warning C4101: “colour4”: 未引用的局部变量
+C:\Users\11447\source\repos\TDMtoOBJ\TDMtoOBJ\tdmm.h(14,23): warning C4018: “<=”: 有符号/无符号不匹配
+C:\Users\11447\source\repos\TDMtoOBJ\TDMtoOBJ\tdmm.h(419,27): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\11447\source\repos\TDMtoOBJ\TDMtoOBJ\tdmm.h(435,31): warning C4244: “参数”: 从“std::streamoff”转换到“const unsigned int”，可能丢失数据
+C:\Users\11447\source\repos\TDMtoOBJ\TDMtoOBJ\tdmm.h(455,27): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\11447\source\repos\TDMtoOBJ\TDMtoOBJ\tdmm.h(307): warning C4715: “Material::getColorAtPosition”: 不是所有的控件路径都返回值
+  TDMtoOBJ.vcxproj -> C:\Users\11447\source\repos\TDMtoOBJ\Debug\TDMtoOBJ.exe
