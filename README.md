@@ -12,15 +12,17 @@
 
 TODO:提供blender等常用编辑、预览软件的插件
 
-
-3d Material Mesh文件
-
-存储有三角面和三维材质，调用bmp文件作为纹理。
-
-
 cppSDK cpp开发工具包（.h)
 
 tdm2objConverter 提供.tdm文件转化.obj格式。
 
 demoModel 提供木头纹理鳖臑模型.tdm格式及其.obj格式
+
+
+#3d Material Mesh文件
+
+扩展名为.tdm,存储有三角面和三维材质，调用bmp文件作为纹理。
+
+
+
 
